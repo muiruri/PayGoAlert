@@ -26,8 +26,9 @@ CONFIGURE AND PREPARE SOURCE CODE TO BUILD AND RUN PROPERLY
 
 To install the web application runtime dependencies, and test dependencies run the following commands
 
+  npm install
   bower install
-  mvn package -Pfe,fetools
+  mvn package -Pfe
 
 This will download all the dependencies and install them. It will also build the application.
 
