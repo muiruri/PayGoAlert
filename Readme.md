@@ -58,20 +58,20 @@ To run front end tests, run the command
 Application Structure
 
 The application makes use of
-	- Amazon IoT
-	- Amazon Lamda
-	- Spring MVC
-	- MySQL
-	- Backbone JS
-	- Bower
-	- Grunt
-	- Node
-	- Mocha
-	- Sinon
-	- Chai
-	- PhantomJS
-	- Bootstrap
-	- JUnit4
+  * Amazon IoT
+  * Amazon Lamda
+  * Spring MVC
+  * MySQL
+  * Backbone JS
+  * Bower
+  * Grunt
+  * Node
+  * Mocha
+  * Sinon
+  * Chai
+  * PhantomJS
+  * Bootstrap
+  * JUnit4
 
 Application Components
 Main Architecture
