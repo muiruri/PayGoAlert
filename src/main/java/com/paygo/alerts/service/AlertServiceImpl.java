@@ -25,7 +25,7 @@ public class AlertServiceImpl implements AlertService {
     public void processAlert(Alert alert) {
         alertDao.saveAlert(alert);
 
-        String[] emails = {"joywovids@gmail.com"};
+        String[] emails = {"curio.up@gmail.com"};
         notificationService.sendEmail(emails);
     }
 

@@ -43,40 +43,27 @@ public class NotificationServiceImpl implements NotificationService {
 
 
         Session session = Session.getDefaultInstance(props,
-                null);
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication("kylekinyua99@gmail.com","kinyua99");
+                    }
+                });
         try {
             InternetAddress[] sendTo = new InternetAddress[to.length];
             for(int i = 0; i < to.length; i++) {
                 sendTo[i] = InternetAddress.parse(to[i])[0];
             }
 
-            MimeMessage message = new MimeMessage(session);
 
-            // Set From: header field of the header.
-            message.setFrom(new InternetAddress("from@no-spam.com"));
-
-            // Set To: header field of the header.
-            message.addRecipients(Message.RecipientType.TO, sendTo);
-
-            // Set Subject: header field
-            message.setSubject("Gas leak alert!");
-
-            // Now set the actual message
-            message.setText(messageText);
-
-            // Send message
-            Transport.send(message);
-            System.out.println("Sent message successfully....");
-
-            /*javax.mail.Message message = new MimeMessage(session);
+            javax.mail.Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("from@no-spam.com"));
             message.setRecipients(javax.mail.Message.RecipientType.TO, sendTo);
             message.setSubject("Gas leak alert");
             message.setText(messageText);
 
-            Transport transport = session.getTransport("smtp");
+            Transport.send(message);
 
-            transport.sendMessage(message, message.getAllRecipients());*/
+            //transport.sendMessage(message, message.getAllRecipients());
             return true;
         } catch (MessagingException e) {
             e.printStackTrace();
