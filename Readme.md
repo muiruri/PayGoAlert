@@ -88,7 +88,7 @@ The components include
   * Report Controller : This endpoint is used for viewing data stored in the database.
   * Page Controller : This endpoint is used to load HTML pages.
   * Alert Service : This contains the business logic for alerts.
-  * Notification  Service : This module is used to send notifications, at the moment it contains an email sending module.
+  * Notification  Service : This module is used to send notifications, at the moment it contains an email sending module. Notifications re being sent to an configured email address. A more enhanced module would send notifications through SMS or Email to the customer.
   * Alert Dao: This is the Data Access Object for alerts.
   * Query Dao : This Data Access module is used to access the database. This is the only point that accesses the database.
 
