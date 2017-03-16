@@ -23,6 +23,7 @@ var AlertsView = Backbone.View.extend ({
             newModel.count = i;
             newModel.deviceId = model.get("deviceId");
             newModel.timeStamp = model.get("timeStamp");
+            newModel.type = model.get("type");
             newModel.id = model.get("id");
             i++;
             return newModel;
