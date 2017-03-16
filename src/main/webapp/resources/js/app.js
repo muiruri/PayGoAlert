@@ -22,7 +22,7 @@ $(function () {
         }
         var date = new Date();
         date.setTime(value);
-        return date.getDate() + "-" + app.pad(date.getMonth() + 1) + "-" + date.getFullYear();
+        return date.getDate() + "-" + app.pad(date.getMonth() + 1) + "-" + date.getFullYear() + " " + date.getHours() + ":" + pad(date.getMinutes()) + ":" + date.getSeconds();
     }
     
     app.pad = function(value) {
