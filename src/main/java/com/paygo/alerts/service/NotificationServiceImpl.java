@@ -57,7 +57,7 @@ public class NotificationServiceImpl implements NotificationService {
             message.setText(messageText);
 
             Transport transport = session.getTransport("smtp");
-            transport.connect("smtp.gmail.com", "curio.up@gmail.com", "Kennedy1#");
+            transport.connect("smtp.gmail.com", "curio.ups@gmail.com", "Curioups1#");
             transport.sendMessage(message, message.getAllRecipients());
             return true;
         } catch (MessagingException e) {
