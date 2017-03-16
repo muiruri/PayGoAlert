@@ -4,6 +4,7 @@ import com.paygo.alerts.dao.AlertDao;
 import com.paygo.alerts.model.Alert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,10 +21,12 @@ public class AlertServiceImpl implements AlertService {
     private NotificationService notificationService;
 
     @Override
+    @Transactional
     public void processAlert(Alert alert) {
         alertDao.saveAlert(alert);
 
-        notificationService.sendEmail("");
+        String[] emails = {"joywovids@gmail.com"};
+        notificationService.sendEmail(emails);
     }
 
     @Override
