@@ -56,7 +56,7 @@ public class NotificationServiceImpl implements NotificationService {
             message.setFrom(new InternetAddress("from@no-spam.com"));
 
             // Set To: header field of the header.
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            message.addRecipients(Message.RecipientType.TO, sendTo);
 
             // Set Subject: header field
             message.setSubject("Gas leak alert!");
@@ -75,7 +75,7 @@ public class NotificationServiceImpl implements NotificationService {
             message.setText(messageText);
 
             Transport transport = session.getTransport("smtp");
-            
+
             transport.sendMessage(message, message.getAllRecipients());*/
             return true;
         } catch (MessagingException e) {
