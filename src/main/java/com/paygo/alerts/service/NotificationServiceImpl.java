@@ -50,17 +50,36 @@ public class NotificationServiceImpl implements NotificationService {
                 sendTo[i] = InternetAddress.parse(to[i])[0];
             }
 
-            javax.mail.Message message = new MimeMessage(session);
+            MimeMessage message = new MimeMessage(session);
+
+            // Set From: header field of the header.
+            message.setFrom(new InternetAddress("from@no-spam.com"));
+
+            // Set To: header field of the header.
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+
+            // Set Subject: header field
+            message.setSubject("Gas leak alert!");
+
+            // Now set the actual message
+            message.setText(messageText);
+
+            // Send message
+            Transport.send(message);
+            System.out.println("Sent message successfully....");
+
+            /*javax.mail.Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("from@no-spam.com"));
             message.setRecipients(javax.mail.Message.RecipientType.TO, sendTo);
             message.setSubject("Gas leak alert");
             message.setText(messageText);
 
             Transport transport = session.getTransport("smtp");
-            transport.connect("smtp.gmail.com", "kylekinyua99@gmail.com", "kinyua99");
-            transport.sendMessage(message, message.getAllRecipients());
+            
+            transport.sendMessage(message, message.getAllRecipients());*/
             return true;
         } catch (MessagingException e) {
+            e.printStackTrace();
             log.error("Error sending email.");
         }
         return false;
