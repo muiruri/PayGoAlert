@@ -36,7 +36,7 @@ This will download all the dependencies and install them. It will also build the
 
 To run the web application, run the command
 
-  mvn tomcat7:run
+  ```mvn tomcat7:run```
 
 The application will be available in the following URL from your browser
 
@@ -44,16 +44,16 @@ The application will be available in the following URL from your browser
 
 If you have an application running on PORT 8080, you can run using the following command
 
-  mvn tomcat7:run -Dmaven.tomcat.port=<port no.>
+  ```mvn tomcat7:run -Dmaven.tomcat.port=<port no.>```
 
 Enter your preferred port number.
 
 To run web back end tests, run the command
 
-  mvn test
+  ```mvn test```
 
 To run front end tests, run the command
-  mvn package -Pfe-test,fetools-test
+  ```mvn package -Pfe-test,fetools-test```
 
 Application Structure
 
