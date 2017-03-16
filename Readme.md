@@ -73,20 +73,20 @@ The application makes use of
 
 Application Components
 Main Architecture
-	* Amazon IoT - We make use of Amazon IoT to connect with the devices
-	* Amazon Lambda : Lamba is invoked when the Amazon IoT rule is satified, in this case when a device sends a leakage message.
-	* Cloud application : The cloud application is invoked by Amazon Lambda to process an alert.
-	* MySQL : This is used to store alerts.
+  * Amazon IoT - We make use of Amazon IoT to connect with the devices
+  * Amazon Lambda : Lamba is invoked when the Amazon IoT rule is satified, in this case when a device sends a leakage message.
+  * Cloud application : The cloud application is invoked by Amazon Lambda to process an alert.
+  * MySQL : This is used to store alerts.
 	
 Cloud Application Architecture
 The cloud application is based on Spring MVC
 The components include
 	
-	* Alert Controller : This is the API end point for processing alerts.
-	* Report Controller : This endpoint is used for viewing data stored in the database.
-	* Page Controller : This endpoint is used to load HTML pages.
-	* Alert Service : This contains the business logic for alerts.
-	* Notification  Service : This module is used to send notifications, at the moment it contains an email sending module.
-	* Alert Dao: This is the Data Access Object for alerts.
-	* Query Dao : This Data Access module is used to access the database. This is the only point that accesses the database.
+  * Alert Controller : This is the API end point for processing alerts.
+  * Report Controller : This endpoint is used for viewing data stored in the database.
+  * Page Controller : This endpoint is used to load HTML pages.
+  * Alert Service : This contains the business logic for alerts.
+  * Notification  Service : This module is used to send notifications, at the moment it contains an email sending module.
+  * Alert Dao: This is the Data Access Object for alerts.
+  * Query Dao : This Data Access module is used to access the database. This is the only point that accesses the database.
 
